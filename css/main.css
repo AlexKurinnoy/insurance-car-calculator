@@ -1,0 +1,307 @@
+﻿
+
+table {
+  border-collapse: collapse;
+}
+
+h1 {
+  font-size: 1.1rem;
+  color: gray;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+div.placeholder {
+  min-width: 19rem;
+  display: inline-table;
+  border-radius: 0.5rem;
+  vertical-align: top;
+  width: 31%;
+}
+
+  div.placeholder#divR {
+    min-width: 40rem;
+    width: auto;
+  }
+
+  div.placeholder table {
+    width: 100%;
+  }
+
+
+td {
+  padding: 0.2rem;
+}
+
+  td.fieldHeader {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: gray;
+    text-align: left;
+    position: relative;
+  }
+
+    td.fieldHeader img.infoicon {
+      position: absolute;
+      right: 0rem;
+      top: 0.4rem;
+      height: 1rem;
+      cursor: help;
+    }
+
+  td.fieldData {
+    border-radius: 0.5rem;
+    background: #E4EEF7;
+    text-align: center;
+    padding-left: 0.2rem;
+    padding-right: 0.5rem;
+  }
+
+    td.fieldData input,
+    td.fieldData select {
+      font-size: 1.1rem;
+      border-radius: 0.3rem;
+      padding: 0.2rem;
+      margin: 0.2rem;
+    }
+
+      td.fieldData input[type='number'] {
+        -moz-appearance: textfield;
+      }
+
+    td.fieldData select {
+      width: 100%;
+      border: 1px solid #ABCBE2;
+      box-sizing: border-box;
+    }
+
+    td.fieldData input {
+      width: 100%;
+      border: 1px solid #ABCBE2;
+      box-sizing: border-box;
+    }
+
+
+  td.fieldColumns {
+    border-radius: 0.5rem;
+    text-align: center;
+    background: #E4EEF7;
+    padding: 0.1rem;
+    padding-top: 0.2rem;
+  }
+
+    td.fieldColumns label {
+      display: inline-block;
+      vertical-align: top;
+      box-sizing: border-box;
+    }
+
+      td.fieldColumns label.y,
+      td.fieldColumns label.n {
+        background-repeat: no-repeat;
+        background-position: 1rem center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      td.fieldColumns label.y {
+        background-image: url(../images/thumbUp.png);
+      }
+
+      td.fieldColumns label.n {
+        background-image: url(../images/thumbDown.png);
+      }
+
+
+
+
+ 
+
+table#tableRez {
+  border-collapse: separate;
+  border-spacing: 1px;
+  border-radius: 1em;
+  border-style: solid;
+  background-color: #E4EEF7;
+  border-width: 0.5rem;
+  border-color: #E4EEF7;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90vw;
+}
+
+  table#tableRez td {
+    border-radius: 0.5em;
+    border: 1px solid;
+  }
+
+
+  table#tableRez tr.head td {
+    border-radius: 0.5em 0.5em 0 0;
+    background-color: #2D82C2;
+    font-weight: bold;
+  }
+
+
+  table#tableRez tr td {
+    background-color: #ABCBE2;
+    min-width: 7.9vw;
+    height: 2.5em;
+  }
+
+
+
+    table#tableRez tr td span.pay {
+      color: darkgoldenrod;
+      font-weight: bold;
+    }
+
+    table#tableRez tr td span.tar {
+      color: green;
+    }
+
+    table#tableRez tr td.prodid {
+      font-weight: bold;
+      color: #2D82C2;
+      border-color: white;
+    }
+
+    table#tableRez tr td.classname {
+      font-weight: bold;
+      color: #2D82C2;
+      border-color: white;
+    }
+
+
+
+#divDebug {
+  color: green;
+  font-size: 0.8rem;
+  display: none;
+}
+
+#divError {
+  color: red;
+  font-size: 0.8rem;
+}
+
+
+
+div.modalDialog {
+  display: none;
+  position: fixed;
+  background: rgba(255,255,255,0.8);
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+  div.modalDialog > div {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    position: relative;
+    border-radius: 2rem;
+    background: #E4EEF7;
+    color: gray;
+    width: 50vw;
+    height: 85vh;
+    min-width: 500px;
+    min-height: 300px;
+    max-height: 620px;
+    padding: 1rem;
+  }
+
+  div.modalDialog a.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 2rem;
+    position: absolute;
+    right: 1rem;
+    text-align: center;
+    top: 1rem;
+    width: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 2rem;
+    box-shadow: 1px 1px 3px #000;
+    cursor: default;
+  }
+
+    div.modalDialog a.close:hover {
+      background: #00d9ff;
+    }
+
+  div.modalDialog > div > div {
+    overflow: auto;
+    height: 85%;
+    text-align: justify;
+  }
+
+
+  div.modalDialog table#tableInfoMarka {
+    margin: auto;
+    width: 90%;
+    display: table;
+    border-collapse: collapse;
+    border-radius: 1rem;
+  }
+
+    div.modalDialog table#tableInfoMarka thead {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    div.modalDialog table#tableInfoMarka td {
+      margin: 0px;
+      border: solid 2px;
+      padding: 0.2rem;
+      text-align: center;
+    }
+
+      div.modalDialog table#tableInfoMarka td:first-child {
+        text-align: left;
+      }
+
+
+  div.modalDialog table#tableInfo {
+    margin: auto;
+    width: 90%;
+    display: table;
+    border-collapse: collapse;
+    border-radius: 1rem;
+  }
+
+    div.modalDialog table#tableInfo > caption {
+      font-weight: bold;
+    }
+
+
+    div.modalDialog table#tableInfo td {
+      margin: 0px;
+      border: solid 2px;
+      border-radius: 0;
+      padding: 0.2rem;
+    }
+
+      div.modalDialog table#tableInfo td.valname {
+        font-weight: bold;
+      }
+
+
+#infoBm,
+#infoCost,
+#infoKv,
+#infoUse,
+#infoProlong,
+#infoPdd,
+#infoRegion,
+#infoPayments,
+#infoVariant,
+#infoAdd {
+  display: none;
+}

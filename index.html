@@ -1,0 +1,592 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>КАСКО</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link rel="shortcut icon" type="image/x-icon" href="http://kunkalabs.com/im/favicon.ico" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- <link rel="stylesheet" href="css/easydropdown.css"> -->
+
+  <link rel="stylesheet" href="css/style.css?version=1.1">
+  <link rel="stylesheet" href="css/main.css?version=1.1">
+  <!--<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>-->
+  <!-- <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script> -->
+</head>
+<body>
+  <div class="container">
+    <h3>Калькулятор КАСКО</h3>
+  
+    <div class="row">
+      <div class="col-md-4 col-sm-6">
+        <form name="Form1">
+          <div class="panel panel-default">
+            <div class="panel-heading">Об'єкт страхування</div>
+            <div class="panel-body">
+
+              <select id="mark" class="dropdown col-sm-12" onchange="add_model()">
+                <option class="label" hidden>Оберіть марку авто</option>
+              </select>
+
+              <select id="model" class="dropdown col-sm-12">
+                <option class="label" hidden>Оберіть модель авто</option>
+              </select>
+
+              <select id="year" class="dropdown col-sm-12">
+                <option value="2017" checked>2017 рік випуску</option>
+                <option value="2016">2016 рік випуску</option>
+                <option value="2015">2015 рік випуску</option>
+                <option value="2014">2014 рік випуску</option>
+                <option value="2013">2013 рік випуску</option>
+                <option value="2012">2012 рік випуску</option>
+                <option value="2011">2011 рік випуску</option>
+                <option value="2010">2010 рік випуску</option>
+                <option value="2009">2009 рік випуску</option>
+                <option value="2008">2008 рік випуску</option>
+              </select>
+            </div>
+          </div>
+        </form>
+        <form name="Form4">
+          <div class="panel panel-default ">
+            <div class="panel-heading">Місце реєстрації</div>
+            <div class="panel-body">
+              <div class="buttons">
+                <div class="gorod">
+                  <input class="region" type="radio" name="option" id="region1" value="1" checked />
+                  <label for="region1">Київ та Київська область</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="gorod">
+                  <input class="region" type="radio" name="option" id="region2" value="2" />
+                  <label for="region2">Донецьк, Харків, Одеса, Дніпро, Львів, Запоріжжя</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="gorod">
+                  <input class="region" type="radio" name="option" id="region3" value="3" />
+                  <label for="region3">Всі інші міста</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="panel panel-default">
+          <!-- <div class="panel-heading">Страхова сума</div> -->
+          <div class="panel-body">
+            <div class="col-sm-4">
+              <label style="font-size: 0.9em; margin-top: 6%; white-space: nowrap; color: #4B77BE;">Страхова сума:</label>
+            </div>
+            <div class="col-sm-8">
+              <input id="sum" type="text" class="form-control" placeholder="Введить страхову суму, грн." value="400000">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="small-marg">
+          <div class="panel panel-default ">
+            <div class="panel-heading">Уточнюючі параметри</div>
+            <div class="panel-body">
+              <form name="Form6">
+                <div class="buttons">
+                  <div class="additional">
+                    <input class="checkbox" type="checkbox" name="option" id="additional1" value="1" />
+                    <label for="additional1">СТО офіц. дилера</label>
+                  </div>
+                </div>
+                <div class="buttons">
+                  <div class="additional">
+                    <input class="checkbox" type="checkbox" name="option" id="additional2" value="2" />
+                    <label for="additional2">Особи до 23 років</label>
+                  </div>
+                </div>
+                <div class="buttons">
+                  <div class="additional">
+                    <input class="checkbox" type="checkbox" name="option" id="additional3" onclick="multiplication();" value="3" />
+                    <label for="additional3">Таксі/прокат</label>
+                  </div>
+                </div>
+                <div class="buttons">
+                  <div class="additional">
+                    <input class="checkbox" type="checkbox" name="option" id="additional4" value="4" />
+                    <label for="additional4">Фр. 0% на скло</label>
+                  </div>
+                </div>
+                <div class="buttons">
+                  <div class="additional">
+                    <input class="checkbox" type="checkbox" name="option" id="additional5" value="5" checked />
+                    <label for="additional5">З виключ. по ПДР</label>
+                  </div>
+                </div>
+                <div class="buttons">
+                  <div class="additional">
+                    <input class="checkbox" type="checkbox" name="option" id="additional6" value="6" />
+                    <label for="additional6">Без ризику кражі</label>
+                  </div>
+                </div>
+                <div class="buttons">
+                  <div class="additional">
+                    <input class="checkbox" type="checkbox" name="option" id="additional7" value="7" />
+                    <label for="additional7">Фр. 10% на тотал</label>
+                  </div>
+                </div>
+                <div class="buttons">
+                  <div class="additional">
+                    <input class="checkbox" type="checkbox" name="option" id="additional8" value="8" />
+                    <label for="additional8">Без врах. зносу</label>
+                  </div>
+                </div>
+                <div class="photo" data-title="Франшиза по НЗ як по іншим ризиками (Клас 5)">
+                  <div class="buttons">
+                    <div class="additional">
+                      <input class="checkbox" type="checkbox" name="option" id="additional9" value="9" />
+                      <label for="additional9">Фр. по НЗ(Клас 5)</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="photos" data-title="страхування тільки на випадок угону та тотала">
+                  <div class="buttons">
+                    <div class="additional">
+                      <input class="checkbox" type="checkbox" name="option" id="additional10" value="10" />
+                      <label for="additional10">Тільки НЗ та тотал</label>
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+        <form name="Form3">
+          <div class="small-marg">
+            <div class="panel panel-default ">
+              <div class="panel-heading">Варіанти оплати</div>
+              <div class="panel-body">
+                <div class="buttons">
+                  <div class="variant">
+                    <input class="strok_oplat" type="radio" name="option" id="oplata1" value="1" checked />
+                    <label for="oplata1">Одним платежем</label>
+                  </div>
+                </div>
+                <div class="buttons">
+                  <div class="variant">
+                    <input class="strok_oplat" type="radio" name="option" id="oplata2" value="2" />
+                    <label for="oplata2">Двома платежами</label>
+                  </div>
+                </div>
+                <div class="buttons">
+                  <div class="variant">
+                    <input class="strok_oplat" type="radio" name="option" id="oplata3" value="3" />
+                    <label for="oplata3">Чотирма платежами</label>
+                  </div>
+                </div>
+                <div class="buttons">
+                  <div class="variant">
+                    <input class="strok_oplat" type="radio" name="option" id="oplata4" value="4" />
+                    <label for="oplata4">Щомісячний платіж</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <form name="Form5">
+          <div class="panel panel-default ">
+            <div class="panel-heading">Встановлення GPS-сигналізації</div>
+            <div class="panel-body">
+              <div class="buttons">
+                <div class="gps">
+                  <input class="install_gps" type="radio" name="option" id="gps1" value="1" checked />
+                  <label for="gps1">Встановлена</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="gps">
+                  <input class="install_gps" type="radio" name="option" id="gps2" value="2" />
+                  <label for="gps2">Страховик</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="gps">
+                  <input class="install_gps" type="radio" name="option" id="gps3" value="3" />
+                  <label for="gps3">Не буде</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <form name="Form2">
+          <div class="panel panel-default ">
+            <div class="panel-heading">З якого року експлуатації застрахований в СК "Благо"</div>
+            <div class="panel-body">
+              <div class="buttons">
+                <div class="period">
+                  <input class="period_obsl" type="radio" name="option" id="period1" value="0" checked />
+                  <label for="period1">Вперше</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="period">
+                  <input class="period_obsl" type="radio" name="option" id="period2" value="1" />
+                  <label for="period2">1</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="period">
+                  <input class="period_obsl" type="radio" name="option" id="period3" value="2" />
+                  <label for="period3">2</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="period">
+                  <input class="period_obsl" type="radio" name="option" id="period4" value="3" />
+                  <label for="period4">3</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="period">
+                  <input class="period_obsl" type="radio" name="option" id="period5" value="4" />
+                  <label for="period5">4</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="period">
+                  <input class="period_obsl" type="radio" name="option" id="period6" value="5" />
+                  <label for="period6">5</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="period">
+                  <input class="period_obsl" type="radio" name="option" id="period7" value="6" />
+                  <label for="period7">6</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="period">
+                  <input class="period_obsl" type="radio" name="option" id="period8" value="7" />
+                  <label for="period8">7</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="period">
+                  <input class="period_obsl" type="radio" name="option" id="period9" value="8" />
+                  <label for="period9">8</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="period">
+                  <input class="period_obsl" type="radio" name="option" id="period10" value="9" />
+                  <label for="period10">9</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Бонус-малус</div>
+          <div class="panel-body">
+            <form name="Form7">
+              <div class="buttons">
+                <div class="bonus">
+                  <input class="bonus_malus" type="radio" name="option" id="bonus3" value="6" checked />
+                  <label for="bonus3">6 (1,00)</label>
+                </div>
+              </div>
+
+              <div class="buttons">
+                <div class="bonus">
+                  <input class="bonus_malus" type="radio" name="option" id="bonus2" value="7" />
+                  <label for="bonus2">7 (0,90)</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="bonus">
+                  <input class="bonus_malus" type="radio" name="option" id="bonus1" value="8" />
+                  <label for="bonus1">8 (0,85)</label>
+                </div>
+              </div>
+
+              <div class="buttons">
+                <div class="bonus">
+                  <input class="bonus_malus" type="radio" name="option" id="bonus4" value="5" />
+                  <label for="bonus4">5 (1,10)</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="bonus">
+                  <input class="bonus_malus" type="radio" name="option" id="bonus5" value="4" />
+                  <label for="bonus5">4 (1,20)</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="bonus">
+                  <input class="bonus_malus" type="radio" name="option" id="bonus6" value="3" />
+                  <label for="bonus6">3 (1,40)</label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Розмір комісії</div>
+          <div class="panel-body">
+            <form name="Form8">
+              <div class="buttons">
+                <div class="comis">
+                  <input class="comis_nagoroda" type="radio" name="option" id="comis1" value="1" checked />
+                  <label for="comis1">5%</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="comis">
+                  <input class="comis_nagoroda" type="radio" name="option" id="comis2" value="2" />
+                  <label for="comis2">10%</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="comis">
+                  <input class="comis_nagoroda" type="radio" name="option" id="comis3" value="3" />
+                  <label for="comis3">15%</label>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="comis">
+                  <input class="comis_nagoroda" type="radio" name="option" id="comis4" value="4" />
+                  <label for="comis4">20%</label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <form name="Form0">
+            <div class="panel panel-default">
+              <div class="panel-heading">Період страхування</div>
+              <div class="panel-body">
+                <div class="radios-as-buttons">
+                  <div>
+                    <input class="period_strah" type="radio" name="option" id="radio1" value="1" />
+                    <label for="radio1">1 місяць</label>
+                  </div>
+                  <div>
+                    <input class="period_strah" type="radio" name="option" id="radio2" value="2" />
+                    <label for="radio2">2 місяці</label>
+                  </div>
+                  <div>
+                    <input class="period_strah" type="radio" name="option" id="radio3" value="3" />
+                    <label for="radio3">3 місяці</label>
+                  </div>
+                  <div>
+                    <input class="period_strah" type="radio" name="option" id="radio4" value="4" />
+                    <label for="radio4">4 місяці</label>
+                  </div>
+                  <div>
+                    <input class="period_strah" type="radio" name="option" id="radio5" value="5" />
+                    <label for="radio5">5 місяців</label>
+                  </div>
+                  <div>
+                    <input class="period_strah" type="radio" name="option" id="radio6" value="6" />
+                    <label for="radio6">6 місяців</label>
+                  </div>
+                  <div>
+                    <input class="period_strah" type="radio" name="option" id="radio7" value="7" />
+                    <label for="radio7">7 місяців</label>
+                  </div>
+                  <div>
+                    <input class="period_strah" type="radio" name="option" id="radio8" value="8" />
+                    <label for="radio8">8 місяців</label>
+                  </div>
+                  <div>
+                    <input class="period_strah" type="radio" name="option" id="radio9" value="9" />
+                    <label for="radio9">9 місяців</label>
+                  </div>
+                  <div>
+                    <input class="period_strah" type="radio" name="option" id="radio10" value="10" />
+                    <label for="radio10">10 місяців</label>
+                  </div>
+                  <div>
+                    <input class="period_strah" type="radio" name="option" id="radio11" value="11" />
+                    <label for="radio11">11 місяців</label>
+                  </div>
+                  <div>
+                    <input class="period_strah" type="radio" name="option" id="radio12" value="12" checked />
+                    <label for="radio12">12 місяці</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+  <a href="offer_casco.html" target="_blank" class="button_print"> <button type="button" class="btn btn-default hidden-print" aria-hidden="true">Комерційна пропозиція&nbsp;&nbsp;<img src="img/printer.png" alt=""></button></a>
+
+  <div class="table_conatiner" id="table_conatiner">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th rowspan="2" colspan="1"> Продукт</th>
+          <th rowspan="2">Клас ТЗ</th>
+          <th colspan="8" class="tabl_head">
+            Безумовна франшиза по страховим ризикам А*-Е, від страхової суми&nbsp;&nbsp;
+            <a href="#myModal" class="btn btn-info" style="display: inline-block; " data-toggle="modal">Деталі</a>
+          </th>
+        </tr>
+        <tr>
+          <th>0,00%</th>
+          <th>0,25%</th>
+          <th class="someclass">0,50%</th>
+          <th class="someclass">1,00%</th>
+          <th class="someclass">2,00%</th>
+          <th class="someclass">3,00%</th>
+          <th class="someclass">4,00%</th>
+          <th class="someclass">5,00%</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="tr4605">
+          
+          <td class="prod">4605</td>
+          <td class="klass"></td>
+          <td class="td0"><span class="tar0"></span><br><span class="plat0"></span></td>
+          <td class="td1"><span class="tar1"></span><br><span class="plat1"></span></td>
+          <td class="td2"><span class="tar2"></span><br><span class="plat2"></span></td>
+          <td class="td3"><span class="tar3"></span><br><span class="plat3"></span></td>
+          <td class="td4"><span class="tar4"></span><br><span class="plat4"></span></td>
+          <td class="td5"><span class="tar5"></span><br><span class="plat5"></span></td>
+          <td class="td6"><span class="tar6"></span><br><span class="plat6"></span></td>
+          <td class="td7"><span class="tar7"></span><br><span class="plat7"></span></td>
+        </tr>
+      </tbody>
+    </table>
+     <div class="error" id="error_container">
+      </div>
+    <p style="font-size: 8pt; color: red;">* Увага! В залежності від класу ТЗ та марки ТЗ, може встановлюватись додаткова франшиза за ризиком А "Незаконе заволодіння".</p>
+  </div>
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Заголовок модального окна -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <!-- Основное содержимое модального окна -->
+        <div class="modal-body">
+          <table class="mod table table-bordered ">
+            <thead>
+              <tr>
+                <th>Назва</th>
+                <th id="th_4605"> 4605</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>K1</td>
+                <td id="K1_4605">0</td>
+              </tr>
+              <tr>
+                <td>K2</td>
+                <td id="K2_4605">0</td>
+              </tr>
+              <tr>
+                <td>K3</td>
+                <td id="K3_4605">0</td>
+              </tr>
+              <tr>
+                <td>K4</td>
+                <td id="K4_4605">0</td>
+              </tr>
+              <tr>
+                <td>K5</td>
+                <td id="K5_4605">0</td>
+              </tr>
+              <tr>
+                <td>K6</td>
+                <td id="K6_4605">0</td>
+              </tr>
+              <tr>
+                <td>K7</td>
+                <td id="K7_4605">0</td>
+              </tr>
+              <tr>
+                <td>K8</td>
+                <td id="K8_4605">0</td>
+              </tr>
+              <tr>
+                <td>K9</td>
+                <td id="K9_4605">0</td>
+              </tr>
+              <tr>
+                <td>K10</td>
+                <td id="K10_4605">0</td>
+              </tr>
+              <tr>
+                <td>K11</td>
+                <td id="K11_4605">0</td>
+              </tr>
+              <tr>
+                <td>K12</td>
+                <td id="K12_4605">0</td>
+              </tr>
+              <tr>
+                <td>K13</td>
+                <td id="K13_4605">0</td>
+              </tr>
+              <tr>
+                <td>K14</td>
+                <td id="K14_4605">0</td>
+              </tr>
+              <tr>
+                <td>K15</td>
+                <td id="K15_4605">0</td>
+              </tr>
+              <tr>
+                <td>K16</td>
+                <td id="K16_4605">0</td>
+              </tr>
+              <tr>
+                <td>K17</td>
+                <td id="K17_4605">0</td>
+              </tr>
+              <tr>
+                <td>K18</td>
+                <td id="K18_4605">0</td>
+              </tr>
+              <tr>
+                <td>Канд</td>
+                <td id="KUND_4605">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Футер модального окна -->
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/jquery-1.11.1.min.js" type="text/javascript"></script>
+  <script src="scripts/bootstrap.min.js" type="text/javascript"></script>
+  <script src="scripts/markamodel.js?version=1.1" type="text/javascript"></script>
+  <script src="scripts/generate_variable.js?version=1.2" type="text/javascript"></script>
+  <script src="scripts/validate_auto.js?version=1.1" type="text/javascript"></script>
+  <script src="scripts/calculate.js?version=1.5" type="text/javascript"></script>
+
+</body>
+</html>

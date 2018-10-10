@@ -1,0 +1,372 @@
+
+body{
+	font-size: 20px;
+	background: #EEEEEE;
+    font-family: 'Roboto', sans-serif;
+    }
+
+
+h3{
+    text-align: center;
+    margin-bottom: 20px;
+    
+    /*text-shadow: #22A7F0 1px 0px, #22A7F0 1px 1px, #22A7F0 0px 1px, #22A7F0 -1px 1px, #22A7F0 -1px 0px, #22A7F0 -1px -1px, #22A7F0 0px -1px, #22A7F0 1px -1px, #22A7F0 0 0 3px, #22A7F0 0 0 3px, #22A7F0 0 0 1px, #22A7F0 0 0 1px, #22A7F0 0 0 1px, #22A7F0 0 0 1px, #22A7F0 0 0 1px, #22A7F0 0 0 1px;*/
+    letter-spacing: 1px; 
+    }
+
+.container{
+	margin-top: 10px;
+	width: 95%;
+	padding: 15px;
+    padding-bottom: 0;
+    /*border: 1px solid cyan;*/
+    border-radius: 5px;
+    background: #efeff4;
+    }
+
+.row{
+    margin: 0px;
+    }
+
+
+.table{
+    text-align: center;
+     }
+.table > tbody > tr > td{
+    padding: 0px;
+}
+.table > tbody > tr > th{
+    padding: 0px;
+}
+.table-bordered {
+    border: 1px solid #efeff4;
+}
+th{
+    text-align: center;
+    color: white;
+    font-weight: normal;      
+    background: #2D82C2;
+     border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+    }
+td{
+    background: #E4EEF7;
+    color: #2D82C2;
+}
+
+thead{
+    border-radius: 5px;
+    }
+.tabl_head{white-space: nowrap;}
+
+
+.table_conatiner{
+    width: 95%;
+    margin: 10px auto;
+    background: #efeff4;
+    padding: 0px 2%;
+   
+    }
+
+.error{
+    width: 95%;
+    margin: 10px auto;
+    background: white;
+    padding: 10px 30px;
+    border: 1px solid red;
+    border-radius: 5px;
+    }
+
+.mod{
+    font-size: 10pt;
+     }
+ 
+
+
+
+
+
+/*панели подставки*/
+.small-marg>.panel{margin-bottom: 5px;}
+
+.panel:hover{
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 20px #9ecaed;
+    }
+
+.panel-default{
+    color: #464E57;  
+    }
+
+.panel-default>.panel-heading{
+    color: white;
+    background-color: #04b675;
+    }
+
+.panel-body{
+    padding-top: 5px;   
+    padding-bottom: 8px;
+    }
+
+.panel-heading{
+    padding: 0px;
+    text-align: center;
+    font-size: 15px;
+   
+    }
+
+.ico_print{
+     border: none;
+     background: white;
+    }
+
+
+
+.form-control{
+    margin: 1.5% 0;
+    }
+
+/*стилизация радиокнопок выбора периода страхования*/
+.radios-as-buttons div {
+    float: left;
+    width: 8%;
+    margin-left: 3px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: normal;  
+    }
+
+input[type=radio] {
+    display: none;
+    }
+input[type=checkbox] {
+    display: none;
+    }
+
+/*.radios-as-buttons input {
+    position: absolute;
+    left: -9999px;
+}*/
+.radios-as-buttons label {
+    display: block;
+    margin: 0 0 0 -1px;
+    padding: 5px 10px;
+    border: 1px solid #BBBBBB;
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .12);
+    cursor: pointer;
+    }
+.radios-as-buttons input:checked + label {
+    background: #40BA81;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, .2);
+     color: white;
+    }
+
+input[type="radio"]:disabled + label {
+    background: #C4C4C4;
+    }
+
+input[type="checkbox"]:disabled + label {
+    background: #C4C4C4;
+    }
+
+
+/*ЗАКРУГЛЕНИЕ УГОЛКОВ ПАНЕЛИ*/
+/*.radios-as-buttons div:first-child label {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.radios-as-buttons div:last-child label {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}*/
+
+
+/*выпадающие списки*/
+
+.dropdown{
+    height: 35px;
+    margin-top: 10px;
+    width: 100%;
+    }
+
+/*настройка кнопки*/
+
+.buttons label{ 
+    display: block;
+    padding: 5px 10px;
+    background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, white, #e2e2e2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, white, #e2e2e2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, white, #e2e2e2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, white, #e2e2e2); /* Standard syntax */
+    border: 1px solid #67F3F1FF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .12);
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 0.7em;
+    border-radius: 4px;
+    }
+
+.buttons input:checked + label {
+    background: #4D84E4; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, #4D84E4, #205aa7); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #4D84E4, #205aa7); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #4D84E4, #205aa7); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, #4D84E4, #205aa7); /* Standard syntax */
+    border: 1px solid #4D84E4;
+    color: #fff;
+    }
+
+
+
+
+/*настройки разных кнопок*/
+.button_print{
+    position: relative;
+
+
+}
+
+.hidden-print{
+   float:right;
+    
+    height: 30px;
+    padding: 0px 15px;
+   margin-top: -15px;
+   margin-bottom: 3px;
+   margin-right: 75px;
+    box-shadow: 0 5px 10px #c4c4c4;
+    color: white;
+    background: #cf8b01;
+}
+
+.period{
+    float: left;
+    width: 16%;
+    height: 35px;
+    margin-left: 3%;
+    margin-top: 2%
+    }
+
+.variant{
+    float: left;
+    width: 45%;
+    height: 35px;
+    margin-left: 3%;
+    margin-top: 1%
+    }
+
+.gorod{    
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    }
+
+.gps{
+    float: left;
+    width: 29%;
+    height: 35px;
+    margin-left: 3%;
+    margin-top: 1%;
+    margin-bottom: -3px;
+    }
+
+.additional{
+    float: left;
+    width: 45%;
+    height: 35px;
+    margin-left: 3%;
+    margin-top: 1%;
+    margin-bottom: -3px;
+    }
+.additional_long{
+    float: left;
+    width: 93%;
+    height: 38px;
+    margin-left: 3%;
+    margin-top: 1%;
+    margin-bottom: -3px;
+    }
+
+
+.bonus{
+    float: left;
+    width: 29%;
+    height: 35px;
+      margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2.3%;
+    }
+
+.comis{
+    float: left;
+    width: 46%;
+    height: 35px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1%;
+    }
+
+.tar0, .tar1, .tar2, .tar3, .tar4, .tar5, .tar6, .tar7{
+    color: #7A942E;
+}
+
+
+   .photo:hover::after {
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 4%; top: 48%; /* Положение подсказки */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background: rgba(255,255,230,0.9); /* Полупрозрачный цвет фона */
+    font-family: Arial, sans-serif; /* Гарнитура шрифта */
+    font-size: 11px; /* Размер текста подсказки */
+    padding: 5px 10px; /* Поля */
+    border: 1px solid green; /* Параметры рамки */
+    border-radius: 5px;
+   }
+
+   .photos:hover::after {
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 50%; top: 48%; /* Положение подсказки */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background: rgba(255,255,230,0.9); /* Полупрозрачный цвет фона */
+    font-family: Arial, sans-serif; /* Гарнитура шрифта */
+    font-size: 11px; /* Размер текста подсказки */
+    padding: 5px 10px; /* Поля */
+    border: 1px solid green; /* Параметры рамки */
+    border-radius: 5px;
+   }
+/*Медиазапросы для основного контента*/
+@media screen and (max-width: 1480px) {
+    body{ font-size: 16px;  }
+    th{ white-space: pre-line;
+        font-size: 110%;
+        }
+    td{ font-size: 110%;}
+    .ico_detail{ width: 100%;  }
+    }
+@media screen and (max-width: 980px) {
+   .container{ width: 100%;  } 
+   .radios-as-buttons div { width: 16%; }
+    th  { font-size: 80%;}
+    td  { font-size: 80%;}
+    .ico_detail{ width: 100%;  }
+    .button_print{top: 10px;
+                  right: 35px;}
+    }
+@media screen and (max-width: 630px) {
+    th  { font-size: 60%;}
+    td  { font-size: 60%;}
+    .tabl_head{white-space: normal;}
+
+    }
+
+
+
